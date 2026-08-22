@@ -1,0 +1,38 @@
+# Vivado generated files
+.vivado/
+*.jou
+*.log
+*.str
+*.pb
+*.wdb
+*.wcfg
+*.dcp
+*.rpt
+*.bit
+*.bin
+
+# XSim / simulator output
+*.wdb
+*.xsim
+xsim.dir/
+
+# Quartus generated files
+*.qpf
+*.qsf
+*.sof
+*.pof
+incremental_db/
+db/
+output_files/
+
+# IDE / OS
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+
+# Temporary archives / extracted copies
+*.tmp
+*.bak
