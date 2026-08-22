@@ -1,95 +1,84 @@
-# Source Manifest
+# Complete Source Manifest
 
-The supplied final 4×4-mesh/4-cluster project package contains **78 files** in total. This manifest records the source snapshot and keeps the repository honest about what is active versus legacy.
+The supplied archive contains **78 ZIP entries**, including **77 files** plus directory entries. All source files are preserved in this repository.
 
-## Main RTL / support files
+## RTL
 
-```text
-adaptive_routing.v
-address_translator.v
-arbiter_bank.v
-congestion_checker.v
-crossbar_switch.v
-fifo.v
-gateway_decoder.v
-gateway_direction.v
-gateway_direction_tb.v
-gateway_interface.v
-gateway_selector.v
-global_network_4cluster.v
-grant_to_select.v
-hop_calculator.v
-hybrid_noc.v
-hybrid_noc_v2.v
-hybrid_noc_v2_comprehensive_tb.v
-hybrid_noc_v2_smoke_tb.v
-input_buffer.v
-input_port.v
-mesh_4x4_v2.v
-noc_defines.vh
-output_buffer.v
-output_port.v
-packet_generator.v
-packet_receiver.v
-priority_logic.v
-request_classifier.v
-request_generator.v
-round_robin_arbiter.v
-router.v
-router_control_logic.v
-router_controller.v
-routing_unit.v
-spidergon_routing.v
-xy_routing.v
-```
+- `adaptive_routing.v`
+- `address_translator.v`
+- `arbiter_bank.v`
+- `congestion_checker.v`
+- `crossbar_switch.v`
+- `fifo.v`
+- `gateway_decoder.v`
+- `gateway_direction.v`
+- `gateway_direction_tb.v`
+- `gateway_interface.v`
+- `gateway_selector.v`
+- `global_network_4cluster.v`
+- `grant_to_select.v`
+- `hop_calculator.v`
+- `hybrid_noc.v`
+- `hybrid_noc_v2.v`
+- `hybrid_noc_v2_comprehensive_tb.v`
+- `hybrid_noc_v2_smoke_tb.v`
+- `input_buffer.v`
+- `input_port.v`
+- `mesh_4x4_v2.v`
+- `noc_defines.vh`
+- `output_buffer.v`
+- `output_port.v`
+- `packet_generator.v`
+- `packet_receiver.v`
+- `priority_logic.v`
+- `request_classifier.v`
+- `request_generator.v`
+- `round_robin_arbiter.v`
+- `router.v`
+- `router_controller.v`
+- `router_control_logic.v`
+- `routing_unit.v`
+- `spidergon_routing.v`
+- `xy_routing.v`
 
 ## Testbenches
 
-```text
-adaptive_routing_tb.v
-address_translator_tb.v
-arbiter_bank_tb.v
-congestion_checker_tb.v
-crossbar_switch_tb.v
-gateway_decoder_tb.v
-gateway_integration_tb.v
-gateway_interface_tb.v
-gateway_mesh_tb.v
-gateway_path_tb.v
-gateway_selector_tb.v
-global_network_4cluster_tb.v
-grant_to_select_tb.v
-hop_calculator_tb.v
-hybrid_noc_comprehensive_tb.v
-hybrid_noc_comprehensive_tb_clean.v
-hybrid_noc_comprehensive_tb_final.v
-hybrid_noc_tb.v
-input_buffer_tb.v
-input_port_tb.v
-mesh_tb.v
-output_buffer_tb.v
-output_port_tb.v
-packet_generator_tb.v
-packet_receiver_tb.v
-priority_logic_tb.v
-request_classifier_tb.v
-request_generator_tb.v
-round_robin_arbiter_tb.v
-router_controller_tb.v
-router_control_logic_tb.v
-router_tb.v
-router_tb_cgpt.v
-router_tb_ideal.v
-routing_unit_tb.v
-spidergon_routing_tb.v
-tb_router.v
-tb_router2.v
-xy_routing_tb.v
-```
-
-### Current/legacy notes
-
-- `hybrid_noc.v` and `hybrid_noc_v2.v` are byte-for-byte identical in the supplied archive; the repository documentation treats the V2 naming as a compatibility/iteration artifact rather than a separate architecture.
-- `hybrid_noc_comprehensive_tb_final.v` is the preferred full-system verification bench in the supplied snapshot.
-- `mesh_tb.v` is a 0-byte legacy placeholder and should not be counted as an active test.
-- The original ZIP remains useful as an archival snapshot of the complete source package until every source file is mirrored into browsable GitHub folders.
+- `testbench/adaptive_routing_tb.v`
+- `testbench/address_translator_tb.v`
+- `testbench/arbiter_bank_tb.v`
+- `testbench/congestion_checker_tb.v`
+- `testbench/crossbar_switch_tb.v`
+- `testbench/gateway_decoder_tb.v`
+- `testbench/gateway_integration_tb.v`
+- `testbench/gateway_interface_tb.v`
+- `testbench/gateway_mesh_tb.v`
+- `testbench/gateway_path_tb.v`
+- `testbench/gateway_selector_tb.v`
+- `testbench/global_network_4cluster_tb.v`
+- `testbench/grant_to_select_tb.v`
+- `testbench/hop_calculator_tb.v`
+- `testbench/hybrid_noc_comprehensive_tb.v`
+- `testbench/hybrid_noc_comprehensive_tb_clean.v`
+- `testbench/hybrid_noc_comprehensive_tb_final.v`
+- `testbench/hybrid_noc_tb.v`
+- `testbench/input_buffer_tb.v`
+- `testbench/input_port_tb.v`
+- `testbench/mesh_tb.v`
+- `testbench/output_buffer_tb.v`
+- `testbench/output_port_tb.v`
+- `testbench/packet_generator_tb.v`
+- `testbench/packet_receiver_tb.v`
+- `testbench/priority_logic_tb.v`
+- `testbench/request_classifier_tb.v`
+- `testbench/request_generator_tb.v`
+- `testbench/round_robin_arbiter_tb.v`
+- `testbench/router_controller_tb.v`
+- `testbench/router_control_logic_tb.v`
+- `testbench/router_tb.v`
+- `testbench/router_tb_cgpt.v`
+- `testbench/router_tb_ideal.v`
+- `testbench/routing_unit_tb.v`
+- `testbench/spidergon_routing_tb.v`
+- `testbench/tb_router.v`
+- `testbench/tb_router2.v`
+- `testbench/xy_routing_tb.v`
