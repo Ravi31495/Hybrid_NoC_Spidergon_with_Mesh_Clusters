@@ -1,30 +1,72 @@
-# Architecture notes
+# Architecture Specification
 
-This file records the architecture described for the current RTL package. It is intentionally short; the diagrams carry most of the structure so that the design can be understood without reading a long block of text.
+## System topology
 
-## System size
+- **Global:** 4-cluster Spidergon-inspired interconnect
+- **Local:** 4×4 Mesh inside each cluster
+- **Clusters:** 4
+- **Routers per cluster:** 16
+- **Total routers:** 64
+- **Gateway:** R0 in each cluster; no additional gateway router
 
-- 4 clusters
-- 4×4 mesh per cluster
-- 16 routers per cluster
-- 64 routers in the complete system
+## Local Mesh
+
+Each cluster is a 4×4 grid of routers. Router coordinates are represented using 2-bit row and 2-bit column fields. The local network provides NORTH, SOUTH, EAST and WEST connectivity plus LOCAL endpoint access.
+
+## Global layer
+
+The global topology uses the ring:
+
+`C0 ↔ C1 ↔ C2 ↔ C3 ↔ C0`
+
+and opposite-cluster links:
+
+`C0 ↔ C2`
+
+`C1 ↔ C3`
+
+The RTL implements this as a Spidergon-inspired global routing layer rather than claiming strict conformance to a particular canonical Spidergon implementation.
+
+## Router ports
+
+| Encoding | Port |
+|---:|---|
+| 0 | LOCAL |
+| 1 | NORTH |
+| 2 | SOUTH |
+| 3 | EAST |
+| 4 | WEST |
+| 5 | GATEWAY |
 
 ## Packet
 
-The supplied architecture description specifies a fixed 48-bit packet containing destination/source cluster, row and column fields, type, priority and a 32-bit payload.
+The design uses a fixed **48-bit packet** containing destination cluster/row/column, source cluster/row/column, packet type, priority, and a 32-bit payload.
 
-## Routing
+## Routing hierarchy
 
-Local communication uses XY/adaptive routing. Inter-cluster traffic is directed through a gateway and the Spidergon-inspired global layer.
+```text
+Endpoint → Local Mesh → Gateway R0 → Global Layer → Gateway R0 → Destination Mesh → Endpoint
+```
 
-## Router structure
+Local routing is handled by XY/adaptive routing support. Cluster-level routing is handled by the global Spidergon-inspired routing logic.
 
-The router design includes input buffering, routing, request generation/classification, arbitration, crossbar control and output buffering. The source archive contains the individual RTL and testbench modules.
+## Router microarchitecture
 
-## Verification information supplied with the project
+The router integrates:
 
-The project notes report 4096/4096 exhaustive cases, 16/16 stress cases and 4112/4112 overall for the V2 verification flow. These figures are recorded here as supplied project information; they have not been independently rerun during this repository import.
+- Input ports and FIFO buffering
+- Routing-unit logic
+- Request generation/classification
+- Arbitration and priority logic
+- Crossbar switching
+- Output buffering
+- Router control logic
+- Gateway path
 
-## Source preservation
+## Verification scope
 
-The original ZIP is the source snapshot used for this first repository import. No RTL refactoring is being done at this stage. Cleanup and naming changes can be handled later after the repository structure is reviewed.
+The supplied final comprehensive testbench defines **272 checks**: 256 directed routing checks plus simultaneous-traffic, contention, back-to-back, burst, and reset/recovery checks.
+
+The 256 directed checks exercise four cluster IDs × four source-router indices × four destination cluster IDs × four destination-router indices. They are a directed baseline and are **not** a complete 64×64 source/destination sweep.
+
+Simulation result logs and FPGA implementation reports are not claimed until the corresponding artifacts are added to the repository.
