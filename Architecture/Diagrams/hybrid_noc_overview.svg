@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="760" viewBox="0 0 1200 760">
+<rect width="1200" height="760" fill="#ffffff"/>
+<style>
+.t{font-family:Arial,sans-serif;fill:#17202a}.title{font:bold 30px Arial}.sub{font:17px Arial}.head{font:bold 20px Arial}.small{font:15px Arial}.mesh{fill:#eef4fb;stroke:#355c7d;stroke-width:2}.global{stroke:#7b4b8a;stroke-width:5;fill:none}.gw{fill:#fff2cc;stroke:#b8860b;stroke-width:2}
+</style>
+<text x="50" y="48" class="title">Hybrid NoC — 4×4 Mesh Clusters + Spidergon-Inspired Global Layer</text>
+<text x="50" y="80" class="sub">4 clusters × 16 routers = 64-router hierarchical network; R0 of each cluster is the gateway.</text>
+
+<ellipse cx="600" cy="380" rx="455" ry="260" class="global"/>
+<text x="492" y="125" class="head">Global inter-cluster network</text>
+
+<g transform="translate(80,170)"><rect width="330" height="180" rx="14" class="mesh"/><text x="22" y="34" class="head">Cluster 0</text><text x="22" y="62" class="small">4×4 Mesh • 16 routers</text><rect x="22" y="85" width="286" height="60" rx="8" class="gw"/><text x="42" y="112" class="small">Gateway Router</text><text x="42" y="133" class="small">R0 → Global Layer</text></g>
+<g transform="translate(790,170)"><rect width="330" height="180" rx="14" class="mesh"/><text x="22" y="34" class="head">Cluster 1</text><text x="22" y="62" class="small">4×4 Mesh • 16 routers</text><rect x="22" y="85" width="286" height="60" rx="8" class="gw"/><text x="42" y="112" class="small">Gateway Router</text><text x="42" y="133" class="small">R0 → Global Layer</text></g>
+<g transform="translate(80,450)"><rect width="330" height="180" rx="14" class="mesh"/><text x="22" y="34" class="head">Cluster 3</text><text x="22" y="62" class="small">4×4 Mesh • 16 routers</text><rect x="22" y="85" width="286" height="60" rx="8" class="gw"/><text x="42" y="112" class="small">Gateway Router</text><text x="42" y="133" class="small">R0 → Global Layer</text></g>
+<g transform="translate(790,450)"><rect width="330" height="180" rx="14" class="mesh"/><text x="22" y="34" class="head">Cluster 2</text><text x="22" y="62" class="small">4×4 Mesh • 16 routers</text><rect x="22" y="85" width="286" height="60" rx="8" class="gw"/><text x="42" y="112" class="small">Gateway Router</text><text x="42" y="133" class="small">R0 → Global Layer</text></g>
+
+<path d="M410 260 C510 330 690 330 790 260" class="global"/>
+<path d="M790 540 C690 470 510 470 410 540" class="global"/>
+<path d="M410 300 C500 390 700 390 790 540" class="global"/>
+<path d="M790 300 C700 390 500 390 410 540" class="global"/>
+
+<text x="440" y="705" class="sub">Local traffic stays within a Mesh; inter-cluster traffic uses R0 and the global layer.</text>
+</svg>
