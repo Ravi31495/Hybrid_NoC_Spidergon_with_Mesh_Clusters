@@ -1,0 +1,87 @@
+`timescale 1ns / 1ps
+`include "noc_defines.vh"
+
+module router
+(
+    input clk,
+    input rst,
+    input [`PACKET_WIDTH-1:0] local_packet_in,
+    input [`PACKET_WIDTH-1:0] north_packet_in,
+    input [`PACKET_WIDTH-1:0] south_packet_in,
+    input [`PACKET_WIDTH-1:0] east_packet_in,
+    input [`PACKET_WIDTH-1:0] west_packet_in,
+    input [`PACKET_WIDTH-1:0] gateway_packet_in,
+    input local_write,
+    input north_write,
+    input south_write,
+    input east_write,
+    input west_write,
+    input gateway_write,
+    input [`CLUSTER_BITS-1:0] my_cluster,
+    input [`ROW_BITS-1:0] my_row,
+    input [`COL_BITS-1:0] my_col,
+    input local_busy,
+    input north_busy,
+    input south_busy,
+    input east_busy,
+    input west_busy,
+    input gateway_busy,
+    input local_ready,
+    input north_ready,
+    input south_ready,
+    input east_ready,
+    input west_ready,
+    input gateway_ready,
+    output [`PACKET_WIDTH-1:0] local_packet_out,
+    output [`PACKET_WIDTH-1:0] north_packet_out,
+    output [`PACKET_WIDTH-1:0] south_packet_out,
+    output [`PACKET_WIDTH-1:0] east_packet_out,
+    output [`PACKET_WIDTH-1:0] west_packet_out,
+    output [`PACKET_WIDTH-1:0] gateway_packet_out,
+    output local_valid,
+    output north_valid,
+    output south_valid,
+    output east_valid,
+    output west_valid,
+    output gateway_valid,
+    output local_full,
+    output north_full,
+    output south_full,
+    output east_full,
+    output west_full,
+    output gateway_full
+);
+wire [`PACKET_WIDTH-1:0] in_packet0,in_packet1,in_packet2,in_packet3,in_packet4,in_packet5;
+wire [2:0] direction0,direction1,direction2,direction3,direction4,direction5;
+wire request0,request1,request2,request3,request4,request5;
+wire valid0,valid1,valid2,valid3,valid4,valid5;
+wire input_empty0,input_empty1,input_empty2,input_empty3,input_empty4,input_empty5;
+wire input_full0,input_full1,input_full2,input_full3,input_full4,input_full5;
+wire read_enable0,read_enable1,read_enable2,read_enable3,read_enable4,read_enable5;
+
+input_port INPUT_PORT_LOCAL(.clk(clk),.rst(rst),.packet_in(local_packet_in),.packet_valid(local_write),.read_enable(read_enable0),.my_cluster(my_cluster),.my_row(my_row),.my_col(my_col),.local_busy(local_busy),.north_busy(north_busy),.south_busy(south_busy),.east_busy(east_busy),.west_busy(west_busy),.packet_out(in_packet0),.direction(direction0),.request(request0),.packet_valid_out(valid0),.empty(input_empty0),.full(input_full0));
+input_port INPUT_PORT_NORTH(.clk(clk),.rst(rst),.packet_in(north_packet_in),.packet_valid(north_write),.read_enable(read_enable1),.my_cluster(my_cluster),.my_row(my_row),.my_col(my_col),.local_busy(local_busy),.north_busy(north_busy),.south_busy(south_busy),.east_busy(east_busy),.west_busy(west_busy),.packet_out(in_packet1),.direction(direction1),.request(request1),.packet_valid_out(valid1),.empty(input_empty1),.full(input_full1));
+input_port INPUT_PORT_SOUTH(.clk(clk),.rst(rst),.packet_in(south_packet_in),.packet_valid(south_write),.read_enable(read_enable2),.my_cluster(my_cluster),.my_row(my_row),.my_col(my_col),.local_busy(local_busy),.north_busy(north_busy),.south_busy(south_busy),.east_busy(east_busy),.west_busy(west_busy),.packet_out(in_packet2),.direction(direction2),.request(request2),.packet_valid_out(valid2),.empty(input_empty2),.full(input_full2));
+input_port INPUT_PORT_EAST(.clk(clk),.rst(rst),.packet_in(east_packet_in),.packet_valid(east_write),.read_enable(read_enable3),.my_cluster(my_cluster),.my_row(my_row),.my_col(my_col),.local_busy(local_busy),.north_busy(north_busy),.south_busy(south_busy),.east_busy(east_busy),.west_busy(west_busy),.packet_out(in_packet3),.direction(direction3),.request(request3),.packet_valid_out(valid3),.empty(input_empty3),.full(input_full3));
+input_port INPUT_PORT_WEST(.clk(clk),.rst(rst),.packet_in(west_packet_in),.packet_valid(west_write),.read_enable(read_enable4),.my_cluster(my_cluster),.my_row(my_row),.my_col(my_col),.local_busy(local_busy),.north_busy(north_busy),.south_busy(south_busy),.east_busy(east_busy),.west_busy(west_busy),.packet_out(in_packet4),.direction(direction4),.request(request4),.packet_valid_out(valid4),.empty(input_empty4),.full(input_full4));
+input_port INPUT_PORT_GATEWAY(.clk(clk),.rst(rst),.packet_in(gateway_packet_in),.packet_valid(gateway_write),.read_enable(read_enable5),.my_cluster(my_cluster),.my_row(my_row),.my_col(my_col),.local_busy(local_busy),.north_busy(north_busy),.south_busy(south_busy),.east_busy(east_busy),.west_busy(west_busy),.packet_out(in_packet5),.direction(direction5),.request(request5),.packet_valid_out(valid5),.empty(input_empty5),.full(input_full5));
+
+wire [5:0] local_grant,north_grant,south_grant,east_grant,west_grant,gateway_grant;
+wire [2:0] sel0,sel1,sel2,sel3,sel4,sel5;
+wire write_enable0,write_enable1,write_enable2,write_enable3,write_enable4,write_enable5;
+wire read_out0,read_out1,read_out2,read_out3,read_out4,read_out5;
+wire [5:0] request_bus = {request5,request4,request3,request2,request1,request0};
+
+router_controller ROUTER_CONTROLLER(.clk(clk),.rst(rst),.request(request_bus),.dir0(direction0),.dir1(direction1),.dir2(direction2),.dir3(direction3),.dir4(direction4),.dir5(direction5),.local_grant(local_grant),.north_grant(north_grant),.south_grant(south_grant),.east_grant(east_grant),.west_grant(west_grant),.gateway_grant(gateway_grant));
+router_control_logic ROUTER_CONTROL_LOGIC(.clk(clk),.rst(rst),.local_ready(local_ready),.north_ready(north_ready),.south_ready(south_ready),.east_ready(east_ready),.west_ready(west_ready),.gateway_ready(gateway_ready),.local_grant(local_grant),.north_grant(north_grant),.south_grant(south_grant),.east_grant(east_grant),.west_grant(west_grant),.gateway_grant(gateway_grant),.sel0(sel0),.sel1(sel1),.sel2(sel2),.sel3(sel3),.sel4(sel4),.sel5(sel5),.read_enable0(read_enable0),.read_enable1(read_enable1),.read_enable2(read_enable2),.read_enable3(read_enable3),.read_enable4(read_enable4),.read_enable5(read_enable5),.write_enable0(write_enable0),.write_enable1(write_enable1),.write_enable2(write_enable2),.write_enable3(write_enable3),.write_enable4(write_enable4),.write_enable5(write_enable5),.read_out0(read_out0),.read_out1(read_out1),.read_out2(read_out2),.read_out3(read_out3),.read_out4(read_out4),.read_out5(read_out5));
+
+wire [`PACKET_WIDTH-1:0] crossbar_out0,crossbar_out1,crossbar_out2,crossbar_out3,crossbar_out4,crossbar_out5;
+crossbar_switch CROSSBAR_SWITCH(.in0(in_packet0),.in1(in_packet1),.in2(in_packet2),.in3(in_packet3),.in4(in_packet4),.in5(in_packet5),.sel0(sel0),.sel1(sel1),.sel2(sel2),.sel3(sel3),.sel4(sel4),.sel5(sel5),.out0(crossbar_out0),.out1(crossbar_out1),.out2(crossbar_out2),.out3(crossbar_out3),.out4(crossbar_out4),.out5(crossbar_out5));
+
+output_port OUTPUT_PORT_LOCAL(.clk(clk),.rst(rst),.packet_in(crossbar_out0),.write_en(write_enable0),.read_en(read_out0),.packet_out(local_packet_out),.packet_valid(local_valid),.full(local_full),.empty());
+output_port OUTPUT_PORT_NORTH(.clk(clk),.rst(rst),.packet_in(crossbar_out1),.write_en(write_enable1),.read_en(read_out1),.packet_out(north_packet_out),.packet_valid(north_valid),.full(north_full),.empty());
+output_port OUTPUT_PORT_SOUTH(.clk(clk),.rst(rst),.packet_in(crossbar_out2),.write_en(write_enable2),.read_en(read_out2),.packet_out(south_packet_out),.packet_valid(south_valid),.full(south_full),.empty());
+output_port OUTPUT_PORT_EAST(.clk(clk),.rst(rst),.packet_in(crossbar_out3),.write_en(write_enable3),.read_en(read_out3),.packet_out(east_packet_out),.packet_valid(east_valid),.full(east_full),.empty());
+output_port OUTPUT_PORT_WEST(.clk(clk),.rst(rst),.packet_in(crossbar_out4),.write_en(write_enable4),.read_en(read_out4),.packet_out(west_packet_out),.packet_valid(west_valid),.full(west_full),.empty());
+output_port OUTPUT_PORT_GATEWAY(.clk(clk),.rst(rst),.packet_in(crossbar_out5),.write_en(write_enable5),.read_en(read_out5),.packet_out(gateway_packet_out),.packet_valid(gateway_valid),.full(gateway_full),.empty());
+endmodule
