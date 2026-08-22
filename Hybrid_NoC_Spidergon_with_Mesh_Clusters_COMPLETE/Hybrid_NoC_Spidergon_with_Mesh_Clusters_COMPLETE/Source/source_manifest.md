@@ -1,0 +1,84 @@
+# Complete Source Manifest
+
+The supplied archive contains **78 ZIP entries**, including **77 files** plus directory entries. All source files are preserved in this repository.
+
+## RTL
+
+- `adaptive_routing.v`
+- `address_translator.v`
+- `arbiter_bank.v`
+- `congestion_checker.v`
+- `crossbar_switch.v`
+- `fifo.v`
+- `gateway_decoder.v`
+- `gateway_direction.v`
+- `gateway_direction_tb.v`
+- `gateway_interface.v`
+- `gateway_selector.v`
+- `global_network_4cluster.v`
+- `grant_to_select.v`
+- `hop_calculator.v`
+- `hybrid_noc.v`
+- `hybrid_noc_v2.v`
+- `hybrid_noc_v2_comprehensive_tb.v`
+- `hybrid_noc_v2_smoke_tb.v`
+- `input_buffer.v`
+- `input_port.v`
+- `mesh_4x4_v2.v`
+- `noc_defines.vh`
+- `output_buffer.v`
+- `output_port.v`
+- `packet_generator.v`
+- `packet_receiver.v`
+- `priority_logic.v`
+- `request_classifier.v`
+- `request_generator.v`
+- `round_robin_arbiter.v`
+- `router.v`
+- `router_controller.v`
+- `router_control_logic.v`
+- `routing_unit.v`
+- `spidergon_routing.v`
+- `xy_routing.v`
+
+## Testbenches
+
+- `testbench/adaptive_routing_tb.v`
+- `testbench/address_translator_tb.v`
+- `testbench/arbiter_bank_tb.v`
+- `testbench/congestion_checker_tb.v`
+- `testbench/crossbar_switch_tb.v`
+- `testbench/gateway_decoder_tb.v`
+- `testbench/gateway_integration_tb.v`
+- `testbench/gateway_interface_tb.v`
+- `testbench/gateway_mesh_tb.v`
+- `testbench/gateway_path_tb.v`
+- `testbench/gateway_selector_tb.v`
+- `testbench/global_network_4cluster_tb.v`
+- `testbench/grant_to_select_tb.v`
+- `testbench/hop_calculator_tb.v`
+- `testbench/hybrid_noc_comprehensive_tb.v`
+- `testbench/hybrid_noc_comprehensive_tb_clean.v`
+- `testbench/hybrid_noc_comprehensive_tb_final.v`
+- `testbench/hybrid_noc_tb.v`
+- `testbench/input_buffer_tb.v`
+- `testbench/input_port_tb.v`
+- `testbench/mesh_tb.v`
+- `testbench/output_buffer_tb.v`
+- `testbench/output_port_tb.v`
+- `testbench/packet_generator_tb.v`
+- `testbench/packet_receiver_tb.v`
+- `testbench/priority_logic_tb.v`
+- `testbench/request_classifier_tb.v`
+- `testbench/request_generator_tb.v`
+- `testbench/round_robin_arbiter_tb.v`
+- `testbench/router_controller_tb.v`
+- `testbench/router_control_logic_tb.v`
+- `testbench/router_tb.v`
+- `testbench/router_tb_cgpt.v`
+- `testbench/router_tb_ideal.v`
+- `testbench/routing_unit_tb.v`
+- `testbench/spidergon_routing_tb.v`
+- `testbench/tb_router.v`
+- `testbench/tb_router2.v`
+- `testbench/xy_routing_tb.v`
