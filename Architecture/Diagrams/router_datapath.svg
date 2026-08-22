@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="650" viewBox="0 0 1200 650">
+<rect width="1200" height="650" fill="#fff"/>
+<style>.t{font-family:Arial,sans-serif;fill:#17202a}.title{font:bold 30px Arial}.h{font:bold 19px Arial}.s{font:15px Arial}.box{fill:#f5f7fa;stroke:#34495e;stroke-width:2}.arrow{stroke:#566573;stroke-width:3;fill:none;marker-end:url(#a)}</style>
+<defs><marker id="a" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto"><path d="M0,0 L10,3 L0,6 z" fill="#566573"/></marker></defs>
+<text x="50" y="48" class="title">Six-Port NoC Router Datapath</text>
+<text x="50" y="78" class="s">Local endpoint + four Mesh directions + gateway path</text>
+
+<rect x="55" y="130" width="190" height="80" rx="10" class="box"/><text x="82" y="165" class="h">Input Buffers</text><text x="82" y="190" class="s">6 input paths / FIFOs</text>
+<rect x="300" y="130" width="190" height="80" rx="10" class="box"/><text x="326" y="165" class="h">Routing Unit</text><text x="326" y="190" class="s">XY / adaptive logic</text>
+<rect x="545" y="130" width="190" height="80" rx="10" class="box"/><text x="568" y="165" class="h">Request Logic</text><text x="568" y="190" class="s">classify + generate</text>
+<rect x="790" y="130" width="190" height="80" rx="10" class="box"/><text x="830" y="165" class="h">Arbiter</text><text x="830" y="190" class="s">priority / round-robin</text>
+<rect x="420" y="310" width="360" height="105" rx="12" class="box"/><text x="560" y="350" class="h">6×6 Crossbar</text><text x="485" y="380" class="s">Granted input → selected output</text>
+<rect x="55" y="500" width="190" height="80" rx="10" class="box"/><text x="88" y="535" class="h">Output Buffers</text><text x="88" y="560" class="s">6 output paths / FIFOs</text>
+<rect x="300" y="500" width="220" height="80" rx="10" class="box"/><text x="345" y="535" class="h">Mesh Ports</text><text x="338" y="560" class="s">N / S / E / W / Local</text>
+<rect x="575" y="500" width="220" height="80" rx="10" class="box"/><text x="635" y="535" class="h">Gateway</text><text x="630" y="560" class="s">Inter-cluster traffic</text>
+<rect x="850" y="500" width="220" height="80" rx="10" class="box"/><text x="910" y="535" class="h">Control</text><text x="900" y="560" class="s">FSM / handshaking</text>
+
+<path d="M245 170 H300" class="arrow"/><path d="M490 170 H545" class="arrow"/><path d="M735 170 H790" class="arrow"/>
+<path d="M885 210 V270 H690 V310" class="arrow"/><path d="M545 210 V270 H510 V310" class="arrow"/>
+<path d="M420 415 V500 H245" class="arrow"/><path d="M600 415 V500" class="arrow"/><path d="M780 415 V500 H850" class="arrow"/>
+</svg>
