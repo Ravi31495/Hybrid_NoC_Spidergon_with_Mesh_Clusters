@@ -1,3 +1,5 @@
+https://chatgpt.com/share/6ac0bc4e-b194-83e8-a508-5df09285fb32
+
 # Hybrid NoC — Spidergon-Inspired Global Network with 4×4 Mesh Clusters
 
 A hierarchical **Network-on-Chip (NoC)** architecture implemented in **Verilog HDL**, combining four local **4×4 Mesh clusters** with a **Spidergon-inspired global inter-cluster network**.
