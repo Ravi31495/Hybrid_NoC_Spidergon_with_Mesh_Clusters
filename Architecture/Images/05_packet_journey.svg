@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="760" viewBox="0 0 1400 760">
+<rect width="1400" height="760" fill="#f8fafc"/>
+<text x="700" y="60" font-family="Arial,sans-serif" font-size="35" font-weight="700" text-anchor="middle" fill="#0f172a">Two Packet Journeys</text>
+<rect x="70" y="115" width="1260" height="245" rx="24" fill="#eff6ff" stroke="#93c5fd" stroke-width="3"/>
+<text x="110" y="158" font-family="Arial,sans-serif" font-size="24" font-weight="700" fill="#1d4ed8">A. Intra-cluster communication</text>
+<g stroke="#64748b" stroke-width="6"><path d="M240 245 H520"/><path d="M520 245 H800"/></g>
+<g fill="#dbeafe" stroke="#2563eb" stroke-width="3"><rect x="150" y="200" width="180" height="90" rx="15"/><rect x="430" y="200" width="180" height="90" rx="15"/><rect x="710" y="200" width="180" height="90" rx="15"/></g>
+<g font-family="Arial,sans-serif" font-size="21" font-weight="700" text-anchor="middle" fill="#1e3a8a"><text x="240" y="253">Source R</text><text x="520" y="253">Intermediate R</text><text x="800" y="253">Destination R</text></g>
+<path d="M335 185 L360 200 L335 215" fill="none" stroke="#0f766e" stroke-width="5"/><path d="M615 185 L640 200 L615 215" fill="none" stroke="#0f766e" stroke-width="5"/>
+<text x="1030" y="230" font-family="Arial,sans-serif" font-size="19" fill="#334155">Packet stays inside</text><text x="1030" y="258" font-family="Arial,sans-serif" font-size="19" fill="#334155">the local Mesh.</text>
+<rect x="70" y="400" width="1260" height="285" rx="24" fill="#f0fdf4" stroke="#86efac" stroke-width="3"/>
+<text x="110" y="445" font-family="Arial,sans-serif" font-size="24" font-weight="700" fill="#166534">B. Inter-cluster communication</text>
+<g stroke="#0f766e" stroke-width="6" fill="none"><path d="M250 550 H480"/><path d="M650 550 H880"/><path d="M1050 550 H1170"/></g>
+<g fill="#dbeafe" stroke="#2563eb" stroke-width="3"><rect x="150" y="505" width="200" height="90" rx="15"/><rect x="430" y="505" width="220" height="90" rx="15"/><rect x="830" y="505" width="220" height="90" rx="15"/><rect x="1130" y="505" width="150" height="90" rx="15"/></g>
+<rect x="430" y="505" width="220" height="90" rx="15" fill="#fef3c7" stroke="#d97706" stroke-width="3"/>
+<g font-family="Arial,sans-serif" font-size="19" font-weight="700" text-anchor="middle"><text x="250" y="558" fill="#1e3a8a">Source cluster</text><text x="540" y="558" fill="#92400e">Gateway A</text><text x="940" y="558" fill="#1e3a8a">Gateway B</text><text x="1205" y="558" fill="#1e3a8a">Destination</text></g>
+<g font-family="Arial,sans-serif" font-size="16" text-anchor="middle" fill="#475569"><text x="365" y="535">Local Mesh</text><text x="740" y="535">Global layer</text><text x="1090" y="535">Local Mesh</text></g>
+<text x="700" y="640" font-family="Arial,sans-serif" font-size="18" text-anchor="middle" fill="#334155">Conceptual path: local routing → gateway → global routing → destination cluster</text>
+</svg>
