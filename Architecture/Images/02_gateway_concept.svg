@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="700" viewBox="0 0 1200 700">
+<rect width="1200" height="700" fill="#f8fafc"/>
+<text x="600" y="60" font-family="Arial,sans-serif" font-size="34" font-weight="700" text-anchor="middle" fill="#0f172a">Gateway: Local-to-Global Bridge</text>
+<rect x="70" y="150" width="430" height="420" rx="24" fill="#eff6ff" stroke="#93c5fd" stroke-width="3"/>
+<text x="285" y="195" font-family="Arial,sans-serif" font-size="25" font-weight="700" text-anchor="middle" fill="#1d4ed8">Local 2×2 Mesh</text>
+<g stroke="#64748b" stroke-width="6"><path d="M190 300 H380"/><path d="M190 420 H380"/><path d="M210 320 V400"/><path d="M360 320 V400"/></g>
+<g fill="#dbeafe" stroke="#2563eb" stroke-width="3"><rect x="135" y="255" width="110" height="90" rx="12"/><rect x="325" y="255" width="110" height="90" rx="12"/><rect x="135" y="375" width="110" height="90" rx="12"/><rect x="325" y="375" width="110" height="90" rx="12"/></g>
+<g font-family="Arial,sans-serif" font-size="21" font-weight="700" text-anchor="middle" fill="#1e3a8a"><text x="190" y="307">GW0</text><text x="380" y="307">R1</text><text x="190" y="427">R2</text><text x="380" y="427">R3</text></g>
+<path d="M245 285 C275 250 300 250 325 285" fill="none" stroke="#2563eb" stroke-width="3" stroke-dasharray="7 6"/>
+<path d="M435 300 H590" stroke="#0f766e" stroke-width="8" stroke-linecap="round"/><path d="M570 282 L594 300 L570 318" fill="none" stroke="#0f766e" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="600" y="225" width="230" height="150" rx="22" fill="#fef3c7" stroke="#d97706" stroke-width="4"/>
+<text x="715" y="275" font-family="Arial,sans-serif" font-size="25" font-weight="700" text-anchor="middle" fill="#92400e">Gateway Logic</text>
+<text x="715" y="312" font-family="Arial,sans-serif" font-size="17" text-anchor="middle" fill="#92400e">Local/global port</text>
+<text x="715" y="339" font-family="Arial,sans-serif" font-size="17" text-anchor="middle" fill="#92400e">selection + control</text>
+<path d="M830 300 H965" stroke="#0f766e" stroke-width="8" stroke-linecap="round"/><path d="M945 282 L969 300 L945 318" fill="none" stroke="#0f766e" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="975" y="205" width="165" height="190" rx="20" fill="#dcfce7" stroke="#16a34a" stroke-width="3"/>
+<text x="1057" y="260" font-family="Arial,sans-serif" font-size="22" font-weight="700" text-anchor="middle" fill="#166534">Global</text><text x="1057" y="291" font-family="Arial,sans-serif" font-size="22" font-weight="700" text-anchor="middle" fill="#166534">Network</text><text x="1057" y="335" font-family="Arial,sans-serif" font-size="16" text-anchor="middle" fill="#166534">Other clusters</text>
+<text x="600" y="625" font-family="Arial,sans-serif" font-size="20" text-anchor="middle" fill="#334155">Local traffic stays within the cluster; inter-cluster traffic uses the gateway path.</text>
+</svg>
