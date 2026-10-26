@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="900" viewBox="0 0 1400 900">
+<rect width="1400" height="900" fill="#f8fafc"/>
+<text x="700" y="58" font-family="Arial,sans-serif" font-size="36" font-weight="700" text-anchor="middle" fill="#0f172a">Hybrid Mesh–Spidergon NoC</text>
+<text x="700" y="95" font-family="Arial,sans-serif" font-size="19" text-anchor="middle" fill="#475569">Four local 2×2 Mesh clusters connected through gateway routers</text>
+<g stroke="#0f766e" stroke-width="8" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M360 250 H1040 V650 H360 Z"/><path d="M360 250 L1040 650"/><path d="M1040 250 L360 650"/></g>
+<g fill="#eff6ff" stroke="#93c5fd" stroke-width="3"><rect x="100" y="140" width="350" height="220" rx="18"/><rect x="950" y="140" width="350" height="220" rx="18"/><rect x="100" y="540" width="350" height="220" rx="18"/><rect x="950" y="540" width="350" height="220" rx="18"/></g>
+<g font-family="Arial,sans-serif" font-size="22" font-weight="700" text-anchor="middle" fill="#1d4ed8"><text x="275" y="180">Cluster 0</text><text x="1125" y="180">Cluster 1</text><text x="275" y="580">Cluster 3</text><text x="1125" y="580">Cluster 2</text></g>
+<g stroke="#64748b" stroke-width="5"><path d="M190 245 H350"/><path d="M190 300 H350"/><path d="M210 230 V315"/><path d="M330 230 V315"/><path d="M1040 245 H1200"/><path d="M1040 300 H1200"/><path d="M1060 230 V315"/><path d="M1180 230 V315"/><path d="M190 645 H350"/><path d="M190 700 H350"/><path d="M210 630 V715"/><path d="M330 630 V715"/><path d="M1040 645 H1200"/><path d="M1040 700 H1200"/><path d="M1060 630 V715"/><path d="M1180 630 V715"/></g>
+<g fill="#bfdbfe" stroke="#2563eb" stroke-width="2"><circle cx="210" cy="245" r="18"/><circle cx="330" cy="245" r="18"/><circle cx="210" cy="300" r="18"/><circle cx="330" cy="300" r="18"/><circle cx="1060" cy="245" r="18"/><circle cx="1180" cy="245" r="18"/><circle cx="1060" cy="300" r="18"/><circle cx="1180" cy="300" r="18"/><circle cx="210" cy="645" r="18"/><circle cx="330" cy="645" r="18"/><circle cx="210" cy="700" r="18"/><circle cx="330" cy="700" r="18"/><circle cx="1060" cy="645" r="18"/><circle cx="1180" cy="645" r="18"/><circle cx="1060" cy="700" r="18"/><circle cx="1180" cy="700" r="18"/></g>
+<g fill="#fef3c7" stroke="#d97706" stroke-width="4"><circle cx="360" cy="250" r="27"/><circle cx="1040" cy="250" r="27"/><circle cx="360" cy="650" r="27"/><circle cx="1040" cy="650" r="27"/></g>
+<g font-family="Arial,sans-serif" font-size="16" font-weight="700" text-anchor="middle" fill="#92400e"><text x="360" y="256">GW0</text><text x="1040" y="256">GW1</text><text x="360" y="656">GW3</text><text x="1040" y="656">GW2</text></g>
+<rect x="455" y="390" width="490" height="115" rx="20" fill="#dcfce7" stroke="#16a34a" stroke-width="3"/>
+<text x="700" y="432" font-family="Arial,sans-serif" font-size="25" font-weight="700" text-anchor="middle" fill="#166534">Global Spidergon-Inspired Layer</text>
+<text x="700" y="466" font-family="Arial,sans-serif" font-size="18" text-anchor="middle" fill="#166534">Ring links + opposite-cluster links</text>
+<text x="700" y="835" font-family="Arial,sans-serif" font-size="19" text-anchor="middle" fill="#334155">4 clusters × 4 routers = 16 routers in the illustrated baseline</text>
+</svg>
