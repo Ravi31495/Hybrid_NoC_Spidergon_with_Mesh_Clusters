@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="760" viewBox="0 0 1200 760">
+<rect width="1200" height="760" fill="#f8fafc"/>
+<text x="600" y="64" font-family="Arial,sans-serif" font-size="34" font-weight="700" text-anchor="middle" fill="#0f172a">Local Cluster: 2×2 Mesh</text>
+<text x="600" y="100" font-family="Arial,sans-serif" font-size="18" text-anchor="middle" fill="#475569">Each router connects to its local IP and neighboring routers</text>
+<g stroke="#64748b" stroke-width="8" stroke-linecap="round">
+<path d="M410 280 H790"/><path d="M410 500 H790"/><path d="M440 310 V470"/><path d="M760 310 V470"/>
+</g>
+<g fill="#dbeafe" stroke="#2563eb" stroke-width="4">
+<rect x="320" y="220" width="180" height="120" rx="18"/><rect x="700" y="220" width="180" height="120" rx="18"/>
+<rect x="320" y="440" width="180" height="120" rx="18"/><rect x="700" y="440" width="180" height="120" rx="18"/>
+</g>
+<g font-family="Arial,sans-serif" text-anchor="middle" fill="#1e3a8a">
+<text x="410" y="270" font-size="25" font-weight="700">R0</text><text x="410" y="302" font-size="16">Gateway router</text>
+<text x="790" y="270" font-size="25" font-weight="700">R1</text><text x="790" y="302" font-size="16">Mesh router</text>
+<text x="410" y="490" font-size="25" font-weight="700">R2</text><text x="410" y="522" font-size="16">Mesh router</text>
+<text x="790" y="490" font-size="25" font-weight="700">R3</text><text x="790" y="522" font-size="16">Mesh router</text>
+</g>
+<g stroke="#0f766e" stroke-width="4" fill="#ccfbf1"><path d="M410 220 V160"/><path d="M790 220 V160"/><path d="M410 560 V620"/><path d="M790 560 V620"/>
+<rect x="345" y="125" width="130" height="42" rx="10"/><rect x="725" y="125" width="130" height="42" rx="10"/><rect x="345" y="615" width="130" height="42" rx="10"/><rect x="725" y="615" width="130" height="42" rx="10"/></g>
+<g font-family="Arial,sans-serif" font-size="18" font-weight="600" text-anchor="middle" fill="#115e59"><text x="410" y="152">Local IP</text><text x="790" y="152">Local IP</text><text x="410" y="642">Local IP</text><text x="790" y="642">Local IP</text></g>
+<text x="600" y="710" font-family="Arial,sans-serif" font-size="17" text-anchor="middle" fill="#475569">Conceptual connectivity view — not to scale</text>
+</svg>
